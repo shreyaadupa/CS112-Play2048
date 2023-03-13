@@ -1,5 +1,7 @@
 ## Getting Started
 
+This is Play 2048 Game from the Rutgers CS112 Course. Note to future students: it's an overall easy assignment! Have fun with it!
+
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
 ## Folder Structure
