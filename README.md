@@ -1,4 +1,4 @@
-#Personal Note
+# Personal Note
 Hi! 👋
 
 This is the Play 2048 Game Assignment from the Rutgers CS112 Course. 
