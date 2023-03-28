@@ -1,5 +1,5 @@
 # Personal Note
-Hi! 👋
+Hi! 👋 I'm Shreya! 🤗
 
 This is the Play 2048 Game Assignment from the Rutgers CS112 Course. 
 
