@@ -7,14 +7,14 @@ Note to future students: it's an overall easy assignment! Have fun with it!
 
 Below are the assignment instructions:
 
-#Overview
+# Overview
 2048 is a puzzle game where you use the arrow keys to move left, right, up or down to merge tiles of the same number together. Check it out if you never played it before.
 
 The goal of the game is to keep merging numbered (non-zero) tiles until you get one 2048 tile. If two tiles with the same number touch each other, they are merged together in the direction swiped into a new tile with twice the value. (ex: if you move up, the topmost value doubles and the bottom value becomes 0). Be careful with your moves – if the board is full at the end of a turn and there are no other valid moves, it’s game over!
 
 In this assignment, we will represent the 2048 grid as a 4×4 array of integers, with 0’s representing empty tiles. Note that we will grade your individual operations – not your score or ability to get to 2048. 
 
-#Implementation
+# Implementation
 Overview of files provided
 We provide two drivers (text and graphic) to help you test the individual methods. We suggest that you start with the text driver but once you have a good understanding of the assignment then you may use the graphic driver.
 
@@ -38,7 +38,7 @@ DO NOT add new import statements.
 DO NOT change any of the method’s signatures.
 Methods to be implemented by you:
 
-#1. updateOpenSpaces
+# 1. updateOpenSpaces
 This method adds a BoardSpot to the openSpaces array for every  board open spot.
 A spot (i, j) is open when gameBoard[i][j] = 0.
 Initialize a new ArrayList of BoardSpot objects in openSpaces.
@@ -46,7 +46,7 @@ Add to openSpaces all pairs (row, column) where gameBoard[row][column] is 0 (ie.
 Submit Board.java with this method completed under Early Submission to receive extra credit.
 Note: DO NOT call updateOpenSpaces in any method. The driver/Autolab will call updateOpenSpaces and addRandomTile before making a move.
 
-#2. addRandomTile
+# 2. addRandomTile
 Note: updateOpenSpaces must be completed before starting this method.
 
 This method adds a random tile into the board, following these rules:
@@ -60,13 +60,13 @@ Be sure to update the correct tile in the gameBoard array (as defined by the Boa
 Note: On the driver updateOpenSpaces() is called before this method to ensure that openSpaces is up to date. You do not need to remove the board spot from the openSpaces ArrayList!
 Note: On the driver, the seed is set so you will get the same outputs every time when testing individual methods. Autolab uses the same seed as the driver to test this method. However, when playing the full game, the driver will not use seed values – it will use random values to generate different boards and tiles.
 
-#3. swipeLeft
+# 3. swipeLeft
 Move all tiles as far left as possible while maintaining the same order and number of tiles.
 
 There should be no empty spaces to the left of any tile.
 Remember that 0 (gameBoard[row][col] = 0) represents an empty space. 
 
-#4. mergeLeft
+# 4. mergeLeft
 Merge all identical nonzero, horizontal pairs in the board.
 
 The leftmost neighbor (ex. The first 2 in “0 2 2 0”) will double its value, while the rightmost neighbor (ex. The second 2 in “0 2 2 0”) will become 0. The method will turn this row into “0 4 0 0”. 
@@ -76,18 +76,18 @@ The next two methods (transpose and flipRows) can be applied in sequence to rota
 
 For example, we can swipe right by rotating the board twice, calling swipeLeft, then rotating the board twice to return it to its original orientation. The provided method rotateBoard calls transpose and flipRows in sequence to complete a 90 degree clockwise rotation.
 
-#5. transpose
+# 5. transpose
 Interchange the rows and columns of the board. In other words, row 1 should become column 1, row 2 becomes column 2, and so on. More formally, gameBoard[i][j] becomes gameBoard[j][i] for all 0 <= i < 4 and 0 <= j < 4. 
 
 Transposing flips the board along its main diagonal (top left to bottom right). 
 
-#6. flipRows
+# 6. flipRows
 Reverse all rows.
 
 Columns 1, 2, 3, and 4 (in order) will have a new order of 4, 3, 2, and 1. For example, the row “2 0 4 0” would become “0 4 0 2”.
 Repeat this procedure for all 4 rows.
 
-#7. makeMove
+# 7. makeMove
 Putting everything together by calling previous methods to construct 2048 moves in all directions. Rotate as necessary to complete this method using different directions. Swipe left, merge neighbors, and swipe left again to re-fill blank spaces. 
 
 The method input parameter is a character that indicates which direction to move (‘U’ = up, ‘R’ = right, ‘D’ = down, ‘L’ = left). Assume that you will only receive these characters, case-sensitive, as arguments in the makeMove method.
@@ -95,7 +95,7 @@ Be sure to have transpose, flipRows, swipeLeft, and mergeLeft completed before d
 As stated earlier, call rotateBoard to help with non-left directions. This allows for MUCH better code reuse than redoing your swipeLeft and mergeLeft in 3 new directions.
 To test this method, select the “makeMove” option in either driver and enter a character. You can use the W, A, S, and D keys like arrow keys (w = up, a = left, s = down and d = right). Even though you will be using the WASD keys like arrow keys, these keys still map to U, L, D, and R respectively; for instance, pressing W will call makeMove with ‘U’ as the letter parameter.
 
-#Implementation Notes
+# Implementation Notes
 YOU MAY only update the methods updateOpenSpaces(), addRandomTile(), swipeLeft(), mergeLeft(), transpose(), flipRows(), and makeMove().
 COMMENT all printing statements from Board.java
 DO NOT add any instance variables to the Board class.
